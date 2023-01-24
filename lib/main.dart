@@ -13,7 +13,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,11 +22,10 @@ class MyApp extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => loginButton()));
-            },
+          },
           child: Text("Go to Login screen"),
         ),
       ),
     );
   }
 }
-
