@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/adminselectionbutton.dart';
-import 'package:untitled/pages/registerselectionbutton.dart';
-import 'package:untitled/pages/studentselectionbutton.dart';
+import 'package:ACE/pages/adminselectionbutton.dart';
+import 'package:ACE/pages/registerselectionbutton.dart';
+import 'package:ACE/pages/studentselectionbutton.dart';
 
 class SelectionPage extends StatelessWidget {
   const SelectionPage({Key? key}) : super(key: key);
