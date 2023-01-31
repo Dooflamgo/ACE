@@ -5,7 +5,6 @@ class StudentButton extends StatelessWidget {
 
   final Function()? onTap;
 
-
   const StudentButton({super.key, required this.onTap,});
 
   @override
@@ -18,7 +17,7 @@ class StudentButton extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         margin: const EdgeInsets.symmetric(horizontal: 55),
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: Colors.blue,
           borderRadius: BorderRadius.circular(8),
         ),
         child: const Center(

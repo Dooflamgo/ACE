@@ -18,7 +18,7 @@ class AdminButton extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         margin: const EdgeInsets.symmetric(horizontal: 55),
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: Colors.blue,
           borderRadius: BorderRadius.circular(8),
         ),
         child: const Center(
