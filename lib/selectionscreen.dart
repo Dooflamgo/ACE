@@ -43,13 +43,14 @@ class SelectionPage extends StatelessWidget {
               
               RegisterButton(onTap: null)
               
-              
+
 
             ],
           ),
 
         ),
       ),
+
     );
   }
 }
