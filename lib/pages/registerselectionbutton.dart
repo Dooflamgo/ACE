@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
-class RegisterButton extends StatelessWidget {
+import '../registerpage.dart';
 
+class RegisterButton extends StatelessWidget {
   final Function()? onTap;
 
-
-  const RegisterButton({super.key, required this.onTap,});
+  const RegisterButton({
+    super.key,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>RegisterPage()));
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (BuildContext context) => RegisterPage()));
       },
       child: Container(
         padding: const EdgeInsets.all(15),
