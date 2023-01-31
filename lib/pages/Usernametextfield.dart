@@ -1,12 +1,9 @@
-import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class MyUsernameTextField extends StatefulWidget {
   final controller;
   final String hintText;
   final bool obscureText;
-
 
   const MyUsernameTextField({
     super.key,
@@ -20,15 +17,13 @@ class MyUsernameTextField extends StatefulWidget {
 }
 
 class _MyTextFieldState extends State<MyUsernameTextField> {
-
   @override
   Widget build(BuildContext context) {
-
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 25),
       child: TextField(
         decoration: InputDecoration(
-           hintText: 'Username',
+          hintText: 'Username',
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.grey),
           ),

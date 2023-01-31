@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ACE/pages/Passwordtextfield.dart';
 import 'package:ACE/pages/Usernametextfield.dart';
-import 'pages/Usernametextfield.dart';
 import 'pages/My_button.dart';
 
 class StudentLoginPage extends StatelessWidget {
@@ -10,7 +9,6 @@ class StudentLoginPage extends StatelessWidget {
   // text editing controllers
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +77,6 @@ class StudentLoginPage extends StatelessWidget {
             ),
           ),
         ) // column
-    ); //scaffold
+        ); //scaffold
   }
 }
