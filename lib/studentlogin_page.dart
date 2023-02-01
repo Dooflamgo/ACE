@@ -1,3 +1,4 @@
+import 'package:ACE/pages/registerselectionbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:ACE/pages/Passwordtextfield.dart';
 import 'package:ACE/pages/Usernametextfield.dart';
@@ -70,11 +71,24 @@ class StudentLoginPage extends StatelessWidget {
                   onTap: null,
                 ),
 
-                // or continue with
+                SizedBox(height: 7),
 
-                // google + apple sign in button
+                Text(
+                  '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+                  style: TextStyle(color: Colors.grey,
+                      fontWeight: FontWeight.bold),
+                ),
 
-                // not a member? register now
+                SizedBox(height: 5),
+
+                Text(
+                  "Doesn't have an account yet?",
+                  style: TextStyle(color: Colors.grey),
+                ),
+
+                SizedBox(height: 5),
+
+                RegisterButton(onTap: null)
               ],
             ),
           ),

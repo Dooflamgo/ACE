@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ACE/registerpage.dart';
 
 class RegisterButton extends StatelessWidget {
 
@@ -10,7 +11,9 @@ class RegisterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>RegisterPage()));
+      },
       child: Container(
         padding: const EdgeInsets.all(15),
         margin: const EdgeInsets.symmetric(horizontal: 55),
@@ -20,7 +23,7 @@ class RegisterButton extends StatelessWidget {
         ),
         child: const Center(
           child: Text(
-            "Register",
+            "Register Now",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
