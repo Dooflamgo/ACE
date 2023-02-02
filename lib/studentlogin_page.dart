@@ -14,6 +14,7 @@ class StudentLoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.grey[300],
         body: SafeArea(
           child: Center(
@@ -71,11 +72,11 @@ class StudentLoginPage extends StatelessWidget {
 
                 SizedBox(height: 7),
 
-                Text(
-                  '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-                  style: TextStyle(color: Colors.grey,
-                      fontWeight: FontWeight.bold),
-                ),
+                // Text(
+                //   '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+                //   style: TextStyle(color: Colors.grey,
+                //       fontWeight: FontWeight.bold),
+                // ),
 
                 SizedBox(height: 5),
 

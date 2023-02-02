@@ -1,5 +1,5 @@
-import 'package:ACE/pages/GenderSelection.dart';
-import 'package:ACE/pages/GenderText.dart';
+// import 'package:ACE/pages/GenderSelection.dart';
+// import 'package:ACE/pages/GenderText.dart';
 import 'package:ACE/pages/SchoolEmail.dart';
 import 'package:ACE/pages/StudentIDTextField.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +12,6 @@ class RegisterPage extends StatelessWidget {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +19,7 @@ class RegisterPage extends StatelessWidget {
         body: SafeArea(
           child: Center(
             child: Column(
-              children: const <Widget> [
+              children: const <Widget>[
                 SizedBox(height: 50),
 
                 // welcome back, you've been missed!
@@ -59,12 +58,10 @@ class RegisterPage extends StatelessWidget {
                 ),
 
                 SizedBox(height: 10),
-
-
               ],
             ),
           ),
         ) // column
-    ); //scaffold
+        ); //scaffold
   }
 }
