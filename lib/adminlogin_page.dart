@@ -13,11 +13,11 @@ class AdminLoginPage extends StatelessWidget {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.lightBlueAccent[400],
+        resizeToAvoidBottomInset: false,
+        backgroundColor: Colors.grey[300],
         body: SafeArea(
           child: Center(
             child: Column(
@@ -54,7 +54,7 @@ class AdminLoginPage extends StatelessWidget {
                 SizedBox(height: 10), // forgot password
                 Text(
                   'Forgot Password?',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.grey),
                 ),
                 SizedBox(height: 10), // sign in button
                 MyButton(
@@ -62,16 +62,16 @@ class AdminLoginPage extends StatelessWidget {
                 ),
 
                 SizedBox(height: 7),
-                Text(
-                  '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-                  style: TextStyle(color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
+                // Text(
+                //   '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+                //   style: TextStyle(color: Colors.white,
+                //       fontWeight: FontWeight.bold),
+                // ),
 
                 SizedBox(height: 5),
                 Text(
                   "Doesn't have an account yet?",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.grey),
                 ),
 
                 SizedBox(height: 5),
@@ -80,6 +80,6 @@ class AdminLoginPage extends StatelessWidget {
             ),
           ),
         ) // column
-    ); //scaffold
+        ); //scaffold
   }
 }
