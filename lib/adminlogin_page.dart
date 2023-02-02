@@ -54,7 +54,7 @@ class AdminLoginPage extends StatelessWidget {
                 SizedBox(height: 10), // forgot password
                 Text(
                   'Forgot Password?',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: Colors.white),
                 ),
                 SizedBox(height: 10), // sign in button
                 MyButton(
@@ -64,14 +64,14 @@ class AdminLoginPage extends StatelessWidget {
                 SizedBox(height: 7),
                 Text(
                   '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-                  style: TextStyle(color: Colors.grey,
+                  style: TextStyle(color: Colors.white,
                       fontWeight: FontWeight.bold),
                 ),
 
                 SizedBox(height: 5),
                 Text(
                   "Doesn't have an account yet?",
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: Colors.white),
                 ),
 
                 SizedBox(height: 5),

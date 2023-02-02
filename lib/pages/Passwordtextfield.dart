@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 
 class MyPasswordTextField extends StatefulWidget {
@@ -38,12 +37,12 @@ class _MyTextFieldState extends State<MyPasswordTextField> {
             },
           ),
           focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey),
+            borderSide: BorderSide(color: Colors.black),
           ),
           enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white),
+            borderSide: BorderSide(color: Colors.black),
           ),
-          fillColor: Colors.blueGrey,
+          fillColor: Colors.white,
           filled: true,
         ),
       ),

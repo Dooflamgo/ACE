@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MyUsernameTextField extends StatefulWidget {
+
+class RegisterEmail extends StatefulWidget {
   final controller;
   final String hintText;
   final bool obscureText;
 
-  const MyUsernameTextField({
+
+  const RegisterEmail({
     super.key,
     required this.controller,
     required this.hintText,
@@ -13,23 +15,27 @@ class MyUsernameTextField extends StatefulWidget {
   });
 
   @override
-  State<MyUsernameTextField> createState() => _MyTextFieldState();
+  State<RegisterEmail> createState() => _MyTextFieldState();
 }
 
-class _MyTextFieldState extends State<MyUsernameTextField> {
+class _MyTextFieldState extends State<RegisterEmail> {
+
   @override
   Widget build(BuildContext context) {
+
     return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 25),
+      padding: EdgeInsets.symmetric(horizontal: 40),
       child: TextField(
         decoration: InputDecoration(
-          hintText: 'Username',
+          hintText: 'School Issued Email',
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.black),
+            borderSide: BorderSide(color: Colors.grey),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white),
+            borderSide: BorderSide(color: Colors.blue,
+            ),
           ),
+
           fillColor: Colors.white,
           filled: true,
         ),

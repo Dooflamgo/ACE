@@ -1,10 +1,9 @@
-import 'package:ACE/pages/RegisterLastNameTextfield.dart';
-import 'package:ACE/pages/registerEmailTextField.dart';
-import 'package:ACE/pages/registerFirstNameTextfield.dart';
-import 'package:ACE/pages/registerIDnumberTextField.dart';
+import 'package:ACE/pages/GenderSelection.dart';
+import 'package:ACE/pages/GenderText.dart';
+import 'package:ACE/pages/SchoolEmail.dart';
+import 'package:ACE/pages/StudentIDTextField.dart';
 import 'package:flutter/material.dart';
-import 'package:ACE/pages/registerMiddleNameTextfield.dart';
-
+import 'package:ACE/pages/FullnameTextField.dart';
 
 class RegisterPage extends StatelessWidget {
   RegisterPage({super.key});
@@ -17,32 +16,26 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[300],
+        backgroundColor: Colors.lightBlueAccent[400],
         body: SafeArea(
           child: Center(
             child: Column(
-              children: const [
+              children: const <Widget> [
                 SizedBox(height: 50),
-
-                // logo
-                Icon(
-                  Icons.lock,
-                  size: 100,
-                ),
-                SizedBox(height: 25),
 
                 // welcome back, you've been missed!
                 Text(
-                  'Registration',
+                  'Registration Form',
                   style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 19,
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 SizedBox(height: 25),
 
                 // username text-field
-                RegisterFirstName(
+                StudentID(
                   controller: null,
                   hintText: 'Username',
                   obscureText: false,
@@ -51,23 +44,7 @@ class RegisterPage extends StatelessWidget {
                 SizedBox(height: 10),
 
                 // password text-field
-                RegisterMiddleName(
-                  controller: null,
-                  hintText: 'Password',
-                  obscureText: true,
-                ),
-
-                SizedBox(height: 10),
-
-                RegisterLastName(
-                  controller: null,
-                  hintText: 'Password',
-                  obscureText: true,
-                ),
-
-                SizedBox(height: 10),
-
-                RegisterIDNumber(
+                Fullname(
                   controller: null,
                   hintText: 'Password',
                   obscureText: true,
@@ -82,6 +59,7 @@ class RegisterPage extends StatelessWidget {
                 ),
 
                 SizedBox(height: 10),
+
 
               ],
             ),
