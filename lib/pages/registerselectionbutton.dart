@@ -19,7 +19,7 @@ class RegisterButton extends StatelessWidget {
       },
       child: Container(
         padding: const EdgeInsets.all(15),
-        margin: const EdgeInsets.symmetric(horizontal: 55),
+        margin: const EdgeInsets.symmetric(horizontal: 85),
         decoration: BoxDecoration(
           color: Colors.green,
           borderRadius: BorderRadius.circular(8),
