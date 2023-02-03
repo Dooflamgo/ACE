@@ -15,8 +15,7 @@ class confirmButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (BuildContext context) => SelectionPage()));
+        Navigator.pop(context);
       },
       child: Container(
         padding: const EdgeInsets.all(15),
