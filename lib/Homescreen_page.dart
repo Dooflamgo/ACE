@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const Homescreen());
+  runApp(Homescreen());
 }
 
 class Homescreen extends StatelessWidget {
-  const Homescreen({super.key});
-
   static const String _title = 'Bottom Navigation';
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: _title,
       home: MyStatefulWidget(),
     );
@@ -19,8 +17,6 @@ class Homescreen extends StatelessWidget {
 }
 
 class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({super.key});
-
   @override
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
@@ -29,21 +25,18 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  List<Widget> _widgetOptions = <Widget>[
     Text(
-      'Home',
+      '',
       style: optionStyle,
     ),
-    Text(
-      'Classroom page',
-      style: optionStyle,
-    ),
+    GridViewPage(),
     Text(
       'Grades',
       style: optionStyle,
     ),
     Text(
-      'Settings',
+      'Account',
       style: optionStyle,
     ),
   ];
@@ -76,13 +69,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             backgroundColor: Colors.lightBlue,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.grade_rounded),
+            icon: Icon(Icons.grade),
             label: 'Grades',
             backgroundColor: Colors.lightBlue,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Settings',
+            label: 'Account',
             backgroundColor: Colors.lightBlue,
           ),
         ],
@@ -90,6 +83,29 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         selectedItemColor: Colors.white,
         onTap: _onItemTapped,
       ),
+    );
+  }
+}
+
+class GridViewPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      crossAxisCount: 2,
+      children: List.generate(100, (index) {
+        return Card(
+          elevation: 5,
+          margin: EdgeInsets.all(8),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          child: Center(
+            child: Text(
+              'Class $index',
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+        );
+      }),
     );
   }
 }
