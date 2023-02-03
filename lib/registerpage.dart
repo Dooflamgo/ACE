@@ -60,6 +60,11 @@ class RegisterPage extends StatelessWidget {
 
                 GenderRB(),
 
+                MyStatefulWidget(),
+
+
+
+
                 confirmButton(onTap: null)
 
               ],

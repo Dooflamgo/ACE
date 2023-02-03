@@ -1,44 +1,82 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
-class DatePicker extends StatefulWidget {
+
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({super.key, this.restorationId});
+
+  final String? restorationId;
 
   @override
-  State<DatePicker> createState() => _DatePickerState();
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 
-class _DatePickerState extends State<DatePicker> {
-  final txtController=TextEditingController();
+/// RestorationProperty objects can be used because of RestorationMixin.
+class _MyStatefulWidgetState extends State<MyStatefulWidget>
+    with RestorationMixin {
+  // In this example, the restoration ID for the mixin is passed in through
+  // the [StatefulWidget]'s constructor.
+  @override
+  String? get restorationId => widget.restorationId;
 
-  void _selDatePicker()
-  {
-    showDatePicker(context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(2022),
-        lastDate: DateTime.now()).then((pickedDate) {
+  final RestorableDateTime _selectedDate =
+  RestorableDateTime(DateTime(2021, 7, 25));
+  late final RestorableRouteFuture<DateTime?> _restorableDatePickerRouteFuture =
+  RestorableRouteFuture<DateTime?>(
+    onComplete: _selectDate,
+    onPresent: (NavigatorState navigator, Object? arguments) {
+      return navigator.restorablePush(
+        _datePickerRoute,
+        arguments: _selectedDate.value.millisecondsSinceEpoch,
+      );
+    },
+  );
 
-
-          if(pickedDate==null){return;}
-          txtController.text=pickedDate.toString();
-    });
-    
+  static Route<DateTime> _datePickerRoute(
+      BuildContext context,
+      Object? arguments,
+      ) {
+    return DialogRoute<DateTime>(
+      context: context,
+      builder: (BuildContext context) {
+        return DatePickerDialog(
+          restorationId: 'date_picker_dialog',
+          initialEntryMode: DatePickerEntryMode.calendarOnly,
+          initialDate: DateTime.fromMillisecondsSinceEpoch(arguments! as int),
+          firstDate: DateTime(1996),
+          lastDate: DateTime(2022),
+        );
+      },
+    );
   }
+
+  @override
+  void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
+    registerForRestoration(_selectedDate, 'selected_date');
+    registerForRestoration(
+        _restorableDatePickerRouteFuture, 'date_picker_route_future');
+  }
+
+  void _selectDate(DateTime? newSelectedDate) {
+    if (newSelectedDate != null) {
+      setState(() {
+        _selectedDate.value = newSelectedDate;
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(
+              'Selected: ${_selectedDate.value.day}/${_selectedDate.value.month}/${_selectedDate.value.year}'),
+        ));
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-          body: Container(
-            padding: EdgeInsets.all(10),
-            child:  TextField(
-            decoration: InputDecoration(labelText: 'BirthDate'),
-            onTap: _selDatePicker,
-            controller: txtController,
-
-            ),
-         ),
-      ),
+    return Container(
+        child: OutlinedButton(
+          onPressed: () {
+            _restorableDatePickerRouteFuture.present();
+          },
+          child: const Text('Open Date Picker'),
+        ),
     );
   }
 }
-
-
