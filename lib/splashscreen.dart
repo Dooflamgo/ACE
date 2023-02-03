@@ -25,7 +25,7 @@ class _SplashPageState extends State<SplashPage> {
       backgroundColor: Colors.grey.shade400,
       showLoader: true,
       loadingText: const Text("Loading..."),
-      navigator: SelectionPage(),
+      navigator: const SelectionPage(),
       durationInSeconds: 5,
     );
   }
