@@ -2,7 +2,6 @@ import 'package:ACE/pages/DatePicker.dart';
 import 'package:ACE/pages/SchoolEmail.dart';
 import 'package:ACE/pages/StudentIDTextField.dart';
 import 'package:ACE/pages/confirmButton.dart';
-import 'package:ACE/pages/genderSelect.dart';
 import 'package:flutter/material.dart';
 import 'package:ACE/pages/FullnameTextField.dart';
 
@@ -57,8 +56,6 @@ class RegisterPage extends StatelessWidget {
                 ),
 
                 SizedBox(height: 10),
-
-                GenderRB(),
 
                 MyStatefulWidget(),
 

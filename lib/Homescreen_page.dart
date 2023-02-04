@@ -1,3 +1,6 @@
+import 'package:ACE/adminlogin_page.dart';
+import 'package:ACE/Subjects/classroomNSTP.dart';
+import 'package:ACE/registerpage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,11 +33,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       '',
       style: optionStyle,
     ),
+
     GridViewPage(),
+
     Text(
       'Grades',
       style: optionStyle,
     ),
+
     Text(
       'Account',
       style: optionStyle,
@@ -50,9 +56,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Academia Classroom Explorer'),
-      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -66,7 +69,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           BottomNavigationBarItem(
             icon: Icon(Icons.assignment_ind_rounded),
             label: 'Classroom',
-            backgroundColor: Colors.lightBlue,
+            backgroundColor: Colors.lightGreen,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.grade),
@@ -88,24 +91,33 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 }
 
 class GridViewPage extends StatelessWidget {
+  final List<String> className = <String>['NSTP', 'SSP', 'GEN', 'Fil', 'majorSub01', 'majorSub02', 'majorSub03'];
+  final List<Widget> TEST = <Widget>[NSTP(),AdminLoginPage()]; //The amount of index here will dictate the classroom oh array classname.
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
+    return GestureDetector(
+        child: GridView.count(
       crossAxisCount: 2,
-      children: List.generate(100, (index) {
-        return Card(
-          elevation: 5,
-          margin: EdgeInsets.all(8),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          child: Center(
-            child: Text(
-              'Class $index',
-              style: TextStyle(fontSize: 20),
-            ),
-          ),
+      children: List.generate(4, (index) {
+        return GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>TEST[index])); //This is the navigation of the classroom list on classroom in our homescreen.
+            },
+            child: Card(
+        color: Colors.lightBlue,
+        elevation: 5,
+        margin: EdgeInsets.all(8),
+        shape:
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        child: Center(
+        child: Text(
+        'Class ${className[index]}',
+        style: TextStyle(fontSize: 20),
+        ),
+        ),
+            )
         );
       }),
-    );
+        ));
   }
 }
