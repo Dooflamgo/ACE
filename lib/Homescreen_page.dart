@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'MainScreens/Account.dart';
+
 void main() {
   runApp(Homescreen());
 }
@@ -32,11 +34,12 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     ),
     GridViewPage(),
     Text(
-      'Grades',
+      '',
       style: optionStyle,
     ),
+    Account(),
     Text(
-      'Account',
+      '',
       style: optionStyle,
     ),
   ];
@@ -50,9 +53,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Academia Classroom Explorer'),
-      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -74,7 +74,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             backgroundColor: Colors.lightBlue,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.account_box_rounded),
             label: 'Account',
             backgroundColor: Colors.lightBlue,
           ),
@@ -109,3 +109,4 @@ class GridViewPage extends StatelessWidget {
     );
   }
 }
+

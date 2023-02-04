@@ -1,8 +1,8 @@
 import 'package:ACE/pages/DatePicker.dart';
+import 'package:ACE/pages/GenderSelect.dart';
 import 'package:ACE/pages/SchoolEmail.dart';
 import 'package:ACE/pages/StudentIDTextField.dart';
 import 'package:ACE/pages/confirmButton.dart';
-import 'package:ACE/pages/genderSelect.dart';
 import 'package:flutter/material.dart';
 import 'package:ACE/pages/FullnameTextField.dart';
 
@@ -14,7 +14,6 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.lightBlueAccent[400],
         body: SafeArea(
           child: Center(
             child: Column(
@@ -25,7 +24,7 @@ class RegisterPage extends StatelessWidget {
                 Text(
                   'Registration Form',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.blue,
                     fontSize: 25,
                     fontWeight: FontWeight.w600,
                   ),

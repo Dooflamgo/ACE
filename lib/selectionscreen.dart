@@ -11,13 +11,14 @@ class SelectionPage extends StatelessWidget {
     return Scaffold(
       backgroundColor:  Colors.grey[300],
       body: Container(
-        alignment: Alignment.center,
-        padding: const EdgeInsets.all(32),
+        constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/wave.png'),
+          image: DecorationImage(
+              image: AssetImage("assets/images/wave.png"),
               fit: BoxFit.cover,
-            )),
+          ),
+        ),
+
         child: Center(
         child: Column(
           children: const [

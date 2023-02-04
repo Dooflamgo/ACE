@@ -10,6 +10,7 @@ class MyUsernameTextField extends StatefulWidget {
     required this.controller,
     required this.hintText,
     required this.obscureText,
+
   });
 
   @override
@@ -23,7 +24,7 @@ class _MyTextFieldState extends State<MyUsernameTextField> {
       padding: EdgeInsets.symmetric(horizontal: 25),
       child: TextField(
         decoration: InputDecoration(
-          hintText: 'Username',
+          hintText: 'Email',
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.black),
           ),

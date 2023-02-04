@@ -4,7 +4,6 @@ import 'package:ACE/pages/Passwordtextfield.dart';
 import 'package:ACE/pages/Usernametextfield.dart';
 import 'pages/Usernametextfield.dart';
 import 'pages/adminselectionbutton.dart';
-import 'pages/My_button.dart';
 
 class AdminLoginPage extends StatelessWidget {
   AdminLoginPage({super.key});
@@ -57,9 +56,7 @@ class AdminLoginPage extends StatelessWidget {
                   style: TextStyle(color: Colors.grey),
                 ),
                 SizedBox(height: 10), // sign in button
-                MyButton(
-                  onTap: null,
-                ),
+
 
                 SizedBox(height: 7),
                 // Text(

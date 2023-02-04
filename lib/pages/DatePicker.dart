@@ -62,7 +62,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget>
         _selectedDate.value = newSelectedDate;
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text(
-              'Selected: ${_selectedDate.value.day}/${_selectedDate.value.month}/${_selectedDate.value.year}'),
+              'BirthDate Set to: ${_selectedDate.value.day}/${_selectedDate.value.month}/${_selectedDate.value.year}'),
         ));
       });
     }
@@ -75,7 +75,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget>
           onPressed: () {
             _restorableDatePickerRouteFuture.present();
           },
-          child: const Text('Open Date Picker'),
+          child: const Text('BirthDate'),
         ),
     );
   }
